@@ -579,6 +579,22 @@ define Device/mqmaker_witi-512m
 endef
 TARGET_DEVICES += mqmaker_witi-512m
 
+define Device/xiaomi_redmi-router-ac2100
+  DTS := redmi-router-ac2100
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  KERNEL_SIZE := 4096k
+  IMAGE_SIZE := 124416k
+  UBINIZE_OPTS := -E 5
+  IMAGES += kernel1.bin rootfs0.bin
+  IMAGE/kernel1.bin := append-kernel
+  IMAGE/rootfs0.bin := append-ubi | check-size
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  DEVICE_TITLE := Xiaomi Redmi Router AC2100
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e wpad-basic uboot-envtools
+endef
+TARGET_DEVICES += xiaomi_redmi-router-ac2100
+
 define Device/wndr3700v5
   DTS := WNDR3700V5
   BLOCKSIZE := 64k
