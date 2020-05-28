@@ -26,12 +26,13 @@
 
 		led_status_red: status_red {
 			label = "r2100:red:status";
-			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
+			gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
 		};
 
 		led_status_blue: status_blue {
 			label = "r2100:blue:status";
-			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
+			gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
 		};
 
 
@@ -40,27 +41,35 @@
 			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
 		};
 
+		internet_blue {
+			label = "r2100:blue:internet";
+			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
+		};
+
 		wan_amber {
 			label = "r2100:amber:wan";
 			gpios = <&gpio0 14 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "dsa-0.0:00:1Gbps";
 		};
+		
 
-
-		lan3_amber {
-			label = "r2100:amber:lan3";
-			gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;
+		lan1_amber {
+			label = "r2100:amber:lan1";
+			gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "dsa-0.0:02:1Gbps";
 		};
 
 
 		lan2_amber {
 			label = "r2100:amber:lan2";
 			gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "dsa-0.0:03:1Gbps";
 		};
-
-
-		lan1_amber {
-			label = "r2100:amber:lan1";
-			gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
+		
+		lan3_amber {
+			label = "r2100:amber:lan3";
+			gpios = <&gpio0 15 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "dsa-0.0:04:1Gbps";
 		};
 	};
 
