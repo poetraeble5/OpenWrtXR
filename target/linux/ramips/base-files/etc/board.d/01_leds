@@ -402,7 +402,9 @@ xiaomi,mir3p)
 	ucidef_set_led_switch "lan3-amber" "LAN3 (amber)" "$boardname:amber:lan3" "switch0" "0x08" "0x08"
 	;;
 xiaomi,r2100)
-	ucidef_set_led_netdev "internet" "INTERNET" "$boardname:blue:internet" "eth0.2" "tx rx"
+	ucidef_set_led_switch "wan-yellow"  "WAN (yellow)"  "$boardname:yellow:wan"  "switch0" "0x01" "0x01"
+	ucidef_set_led_switch "wan-blue"  "WAN (blue)"  "$boardname:blue:wan"  "switch0" "0x01"
+	;;
 	;;
 xiaomi,redmi-router-ac2100)
 	ucidef_set_led_netdev "wan" "wan" "$boardname:white:wan" "wan"
