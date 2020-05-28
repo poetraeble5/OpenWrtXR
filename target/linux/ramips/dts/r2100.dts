@@ -62,9 +62,6 @@
 			label = "r2100:amber:lan1";
 			gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
 		};
-
-
-	    };
 	};
 
 	keys {
