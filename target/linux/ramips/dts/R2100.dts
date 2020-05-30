@@ -34,7 +34,6 @@
 			gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
 		};
 
-
 		wan_yellow {
 			label = "r2100:yellow:wan";
 			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
@@ -44,7 +43,6 @@
 			label = "r2100:blue:wan";
 			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
 		};
-
 	};
 
 	keys {
@@ -56,7 +54,6 @@
 			linux,code = <KEY_RESTART>;
 		};
 	};
-
 };
 
 
