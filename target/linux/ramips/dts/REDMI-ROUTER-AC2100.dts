@@ -4,37 +4,37 @@
 #include "XIAOMI_ROUTER-AC2100.dtsi"
 
 / {
-	compatible = "xiaomi,r2100", "mediatek,mt7621-soc";
-	model = "Xiaomi Redmi Router AC2100 (R2100 black)";
+	compatible = "xiaomi,redmi-router-ac2100", "mediatek,mt7621-soc";
+	model = "Xiaomi Redmi Router AC2100 (RM2100 white)";
 
 	aliases {
-		led-boot = &led_status_yellow;
-		led-failsafe = &led_status_yellow;
-		led-running = &led_status_blue;
-		led-upgrade = &led_status_blue;
+		led-boot = &led_status_amber;
+		led-failsafe = &led_status_amber;
+		led-running = &led_status_white;
+		led-upgrade = &led_status_white;
 	};
 
 	leds {
 		compatible = "gpio-leds";
 
-		led_status_yellow: status_yellow {
-			label = "r2100:yellow:status";
-			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
-		};
-
-		led_status_blue: status_blue {
-			label = "r2100:blue:status";
-			gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
-		};
-
-		wan_yellow {
-			label = "r2100:yellow:wan";
+		led_status_amber: status_amber {
+			label = "redmi-router-ac2100:amber:status";
 			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
 		};
 
-		wan_blue {
-			label = "r2100:blue:wan";
+		led_status_white: status_white {
+			label = "redmi-router-ac2100:white:status";
 			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
+		};
+
+		wan_amber {
+			label = "redmi-router-ac2100:amber:wan";
+			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
+		};
+
+		wan_white {
+			label = "redmi-router-ac2100:white:wan";
+			gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
 		};
 	};
 };
