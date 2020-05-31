@@ -5,7 +5,7 @@
 
 / {
 	compatible = "xiaomi,redmi-router-ac2100", "mediatek,mt7621-soc";
-	model = "Xiaomi Redmi Router AC2100 (RM2100 white)";
+	model = "Xiaomi Redmi Router AC2100";
 
 	aliases {
 		led-boot = &led_status_amber;
