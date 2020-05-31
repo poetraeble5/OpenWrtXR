@@ -4,8 +4,8 @@
 #include "XIAOMI_ROUTER-AC2100.dtsi"
 
 / {
-	compatible = "xiaomi,r2100", "mediatek,mt7621-soc";
-	model = "Xiaomi Redmi Router AC2100 (R2100 black)";
+	compatible = "xiaomi,mi-router-ac2100", "mediatek,mt7621-soc";
+	model = "Xiaomi Mi Router AC2100";
 
 	aliases {
 		led-boot = &led_status_yellow;
@@ -17,6 +17,16 @@
 	leds {
 		compatible = "gpio-leds";
 
+		wan_yellow {
+			label = "r2100:yellow:wan";
+			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+		};
+
+		wan_blue {
+			label = "r2100:blue:wan";
+			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
+		};
+
 		led_status_yellow: status_yellow {
 			label = "r2100:yellow:status";
 			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
@@ -27,14 +37,5 @@
 			gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
 		};
 
-		wan_yellow {
-			label = "r2100:yellow:wan";
-			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
-		};
-
-		wan_blue {
-			label = "r2100:blue:wan";
-			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
-		};
 	};
 };

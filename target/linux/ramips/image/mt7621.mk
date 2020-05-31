@@ -260,22 +260,21 @@ define Device/k2p
 endef
 TARGET_DEVICES += k2p
 
-define Device/xiaomi_mir3p
-  DTS := MIR3P
+define Device/xiaomi_mi-router-ac2100
+  DTS := MI-ROUTER-AC2100
   BLOCKSIZE := 128k
   PAGESIZE := 2048
-  KERNEL_SIZE:= 4096k
+  KERNEL_SIZE := 4096k
+  IMAGE_SIZE := 124416k
   UBINIZE_OPTS := -E 5
-  IMAGE_SIZE := $(ralink_default_fw_size_32M)
-  DEVICE_TITLE := Xiaomi Mi Router 3 Pro
-  IMAGES += factory.bin
+  IMAGES += kernel1.bin rootfs0.bin
+  IMAGE/kernel1.bin := append-kernel
+  IMAGE/rootfs0.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
-  IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | check-size $$$$(IMAGE_SIZE)
-  DEVICE_PACKAGES := \
-	kmod-mt7615e kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic \
-	uboot-envtools
+  DEVICE_TITLE := Xiaomi Mi Router AC2100
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e wpad-basic uboot-envtools
 endef
-TARGET_DEVICES += xiaomi_mir3p
+TARGET_DEVICES += xiaomi_mi-router-ac2100
 
 define Device/xiaomi_mir3g
   DTS := MIR3G
@@ -297,6 +296,39 @@ define Device/xiaomi_mir3g
 	uboot-envtools
 endef
 TARGET_DEVICES += xiaomi_mir3g
+
+define Device/xiaomi_mir3p
+  DTS := MIR3P
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  KERNEL_SIZE:= 4096k
+  UBINIZE_OPTS := -E 5
+  IMAGE_SIZE := $(ralink_default_fw_size_32M)
+  DEVICE_TITLE := Xiaomi Mi Router 3 Pro
+  IMAGES += factory.bin
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | check-size $$$$(IMAGE_SIZE)
+  DEVICE_PACKAGES := \
+        kmod-mt7615e kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic \
+        uboot-envtools
+endef
+TARGET_DEVICES += xiaomi_mir3p
+
+define Device/xiaomi_redmi-router-ac2100
+  DTS := REDMI-ROUTER-AC2100
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  KERNEL_SIZE := 4096k
+  IMAGE_SIZE := 124416k
+  UBINIZE_OPTS := -E 5
+  IMAGES += kernel1.bin rootfs0.bin
+  IMAGE/kernel1.bin := append-kernel
+  IMAGE/rootfs0.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  DEVICE_TITLE := Xiaomi Redmi Router AC2100
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e wpad-basic uboot-envtools
+endef
+TARGET_DEVICES += xiaomi_redmi-router-ac2100
 
 define Device/mt7621
   DTS := MT7621
@@ -578,39 +610,6 @@ define Device/mqmaker_witi-512m
 	kmod-usb-ledtrig-usbport wpad-basic
 endef
 TARGET_DEVICES += mqmaker_witi-512m
-
-define Device/xiaomi_redmi-router-ac2100
-  DTS := REDMI-ROUTER-AC2100
-  BLOCKSIZE := 128k
-  PAGESIZE := 2048
-  KERNEL_SIZE := 4096k
-  IMAGE_SIZE := 124416k
-  UBINIZE_OPTS := -E 5
-  IMAGES += kernel1.bin rootfs0.bin
-  IMAGE/kernel1.bin := append-kernel
-  IMAGE/rootfs0.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
-  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
-  DEVICE_TITLE := Xiaomi Redmi Router AC2100 (RM2100 white)
-  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e wpad-basic uboot-envtools
-endef
-TARGET_DEVICES += xiaomi_redmi-router-ac2100
-
-define Device/xiaomi_r2100
-  DTS := R2100
-  BLOCKSIZE := 128k
-  PAGESIZE := 2048
-  KERNEL_SIZE := 4096k
-  IMAGE_SIZE := 124416k
-  UBINIZE_OPTS := -E 5
-  IMAGES += kernel1.bin rootfs0.bin
-  IMAGE/kernel1.bin := append-kernel
-  IMAGE/rootfs0.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
-  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
-  DEVICE_TITLE := Xiaomi Redmi Router AC2100 (R2100 black)
-  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e wpad-basic uboot-envtools
-endef
-TARGET_DEVICES += xiaomi_r2100
-
 
 define Device/wndr3700v5
   DTS := WNDR3700V5

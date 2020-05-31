@@ -60,10 +60,10 @@ platform_do_upgrade() {
 	netgear,r6350|\
 	ubnt-erx|\
 	ubnt-erx-sfp|\
+	xiaomi,mi-router-ac2100|\
 	xiaomi,mir3g|\
 	xiaomi,mir3p|\
-	xiaomi,redmi-router-ac2100|\
-	xiaomi,r2100)
+	xiaomi,redmi-router-ac2100)
 		nand_do_upgrade "$1"
 		;;
 	tplink,c50-v4)
