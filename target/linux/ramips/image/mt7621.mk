@@ -271,7 +271,7 @@ define Device/xiaomi_mi-router-ac2100
   IMAGE/kernel1.bin := append-kernel
   IMAGE/rootfs0.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
-  DEVICE_TITLE := Xiaomi Mi Router AC2100
+  DEVICE_TITLE := Xiaomi Mi Router AC2100 (Black Cylinder)
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e wpad-basic uboot-envtools
 endef
 TARGET_DEVICES += xiaomi_mi-router-ac2100
@@ -325,7 +325,7 @@ define Device/xiaomi_redmi-router-ac2100
   IMAGE/kernel1.bin := append-kernel
   IMAGE/rootfs0.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
-  DEVICE_TITLE := Xiaomi Redmi Router AC2100
+  DEVICE_TITLE := Xiaomi Redmi Router AC2100 (White, 6-Antenna)
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e wpad-basic uboot-envtools
 endef
 TARGET_DEVICES += xiaomi_redmi-router-ac2100
