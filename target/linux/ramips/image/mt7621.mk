@@ -265,7 +265,7 @@ define Device/xiaomi_mi-router-ac2100
   BLOCKSIZE := 128k
   PAGESIZE := 2048
   KERNEL_SIZE := 4096k
-  IMAGE_SIZE := 124416k
+  IMAGE_SIZE := 120320k
   UBINIZE_OPTS := -E 5
   IMAGES += kernel1.bin rootfs0.bin
   IMAGE/kernel1.bin := append-kernel
@@ -319,7 +319,7 @@ define Device/xiaomi_redmi-router-ac2100
   BLOCKSIZE := 128k
   PAGESIZE := 2048
   KERNEL_SIZE := 4096k
-  IMAGE_SIZE := 124416k
+  IMAGE_SIZE := 120320k
   UBINIZE_OPTS := -E 5
   IMAGES += kernel1.bin rootfs0.bin
   IMAGE/kernel1.bin := append-kernel
