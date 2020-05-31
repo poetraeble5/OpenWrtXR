@@ -18,22 +18,22 @@
 		compatible = "gpio-leds";
 
 		wan_yellow {
-			label = "r2100:yellow:wan";
+			label = "mi-router-ac2100:yellow:wan";
 			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
 		};
 
 		wan_blue {
-			label = "r2100:blue:wan";
+			label = "mi-router-ac2100:blue:wan";
 			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
 		};
 
 		led_status_yellow: status_yellow {
-			label = "r2100:yellow:status";
+			label = "mi-router-ac2100:yellow:status";
 			gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
 		};
 
 		led_status_blue: status_blue {
-			label = "r2100:blue:status";
+			label = "mi-router-ac2100:blue:status";
 			gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
 		};
 
