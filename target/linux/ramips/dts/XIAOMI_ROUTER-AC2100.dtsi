@@ -50,7 +50,7 @@
 		};
 
 		factory: partition@100000 {
-			label = "factory";
+			label = "Factory";
 			reg = <0x100000 0x40000>;
 			read-only;
 		};
@@ -112,7 +112,7 @@
 };
 
 &ethernet {
-	mtd-mac-address = <&factory 0xe000>;
+	mtd-mac-address = <&factory 0xe006>;
 	mediatek,portmap = "wllll";
 };
 

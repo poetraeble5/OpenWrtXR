@@ -692,9 +692,11 @@ ramips_setup_macs()
 		wan_mac=$(macaddr_add "$(mtd_get_mac_binary factory 32772)" 2)
 		;;
 	xiaomi,mi-router-ac2100|\
-	xiaomi,mir3g|\
-	xiaomi,mir3p|\
 	xiaomi,redmi-router-ac2100)
+		lan_mac=$(mtd_get_mac_binary Factory 0xe000)
+		;;
+	xiaomi,mir3g|\
+	xiaomi,mir3p)
 		lan_mac=$(mtd_get_mac_binary Factory 0xe006)
 		;;
 	zyxel,keenetic-start)
